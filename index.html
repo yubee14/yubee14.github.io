@@ -6,6 +6,89 @@
 <title>Muhammad Al Ayubi – Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css"/>
+<style>
+  .edu-role {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .bullet-list {
+    margin-top: 10px;
+    padding-left: 18px;
+  }
+  .bullet-list li {
+    margin: 6px 0;
+  }
+  .slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .slider-viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius);
+  }
+  .slider-viewport::-webkit-scrollbar { height: 8px; }
+  .slider-viewport::-webkit-scrollbar-thumb {
+    background: rgba(201,168,76,0.2);
+    border-radius: 100px;
+  }
+  .slider-track {
+    display: flex;
+    gap: 24px;
+  }
+  .projects-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+  }
+  .projects-slide .projects-grid {
+    width: 100%;
+    margin: 0;
+  }
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(22,20,16,0.82);
+    color: var(--gold-light);
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, border-color 0.2s, background 0.2s, opacity 0.2s;
+    z-index: 2;
+  }
+  .slider-btn:hover {
+    border-color: rgba(201,168,76,0.35);
+    background: rgba(30,27,22,0.9);
+    transform: translateY(-50%) scale(1.06);
+  }
+  .slider-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+  .slider-btn--prev { left: -22px; }
+  .slider-btn--next { right: -22px; }
+  @media (max-width: 768px) {
+    .slider { max-width: 100%; }
+    .slider-btn { display: none; }
+    .slider-viewport { border-radius: 0; }
+  }
+</style>
 </head>
 <body>
 
@@ -14,7 +97,9 @@
   <a class="nav-logo" href="#hero">Al Ayubi</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#summary">Summary</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -43,7 +128,7 @@
         Muhammad<br><span>Al Ayubi</span>
       </h1>
       <p class="hero-title">
-        <strong>Software Engineering Student</strong> · Informatics Engineering, Semester 5
+        <strong>Software Engineering Student</strong> · Informatics Engineering, Semester 6
       </p>
       <p class="hero-desc">
         Passionate full-stack developer and IoT engineer based in Batam, Kepulauan Riau.
@@ -64,7 +149,7 @@
           <div class="stat-label">Tech Stacks</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">5</div>
+          <div class="stat-num">6</div>
           <div class="stat-label">Semester</div>
         </div>
       </div>
@@ -120,12 +205,21 @@
           </div>
         </div>
       </div>
+      <div class="info-item">
+        <div class="info-icon">📷</div>
+        <div class="info-text">
+          <div class="info-label">Instagram</div>
+          <div class="info-value">
+            <a href="https://instagram.com/yubee14" target="_blank" style="color: var(--gold); text-decoration: none;">@yubee14</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="about-text-block reveal" style="transition-delay: 0.15s;">
       <p>
         I'm a <strong>Software Engineering (SEE) student</strong> at Politeknik Negeri Batam, 
-        currently in Semester 5. My journey started with e-commerce back-end development, 
+        currently in Semester 6. My journey started with e-commerce back-end development, 
         evolved into full-stack work, and recently expanded into the exciting world of <strong>IoT engineering</strong>.
       </p>
       <p>
@@ -143,6 +237,52 @@
 
 <div class="section-divider"></div>
 
+<!-- SUMMARY -->
+<section id="summary">
+  <div class="section-label">Professional Summary</div>
+  <h2 class="section-title">What I Bring</h2>
+
+  <div class="about-grid">
+    <div class="about-text-block reveal">
+      <p>
+        Detail-oriented Software Developer with a strong foundation in Informatics Engineering and
+        Software Engineering. Experienced in the full software development lifecycle (SDLC),
+        transitioning from technical infrastructure to creating high-impact software solutions.
+      </p>
+      <p>
+        Proven track record in developing internal systems, including Engineering Change Requests (ECR),
+        Room Booking, Document Control, and Indirect Material systems. Passionate about leveraging
+        technology to optimize business processes and operational efficiency.
+      </p>
+    </div>
+    <div class="about-info-block reveal" style="transition-delay: 0.15s;">
+      <div class="info-item">
+        <div class="info-icon">🧩</div>
+        <div class="info-text">
+          <div class="info-label">Focus</div>
+          <div class="info-value">Internal systems & process automation</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🛠️</div>
+        <div class="info-text">
+          <div class="info-label">Strength</div>
+          <div class="info-value">From support to full SDLC delivery</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🎯</div>
+        <div class="info-text">
+          <div class="info-label">Goal</div>
+          <div class="info-value">Operational efficiency with scalable software</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-label">Education</div>
@@ -152,12 +292,15 @@
     <div class="edu-item reveal">
       <div class="edu-dot">🎓</div>
       <div class="edu-body">
-        <div class="edu-period">2022 – Present (On Going)</div>
+        <div class="edu-period">2022 – 2026 (Expected)</div>
         <div class="edu-school">Politeknik Negeri Batam</div>
         <div class="edu-desc">
-          Informatics Engineering · Software Engineering (SEE) specialization.
-          Currently in Semester 5, learning the fundamentals and modern practices 
-          of software development including full-stack web and IoT systems.
+          Associate Degree in Informatics Engineering (Semester 6).
+          <ul class="bullet-list">
+            <li>Developed full-stack E-Commerce web applications.</li>
+            <li>Proficient in Laravel framework, including Blade templating and Tailwind CSS implementation.</li>
+            <li>Experienced in IoT programming using C language.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -167,8 +310,66 @@
         <div class="edu-period">2019 – 2022</div>
         <div class="edu-school">SMKN 1 Sintuk Toboh Gadang</div>
         <div class="edu-desc">
-          Vocational High School — laid the foundation for technical and 
-          analytical thinking that drives my work today.
+          Vocational High School · Major in Software Engineering.
+          <ul class="bullet-list">
+            <li>Foundational practice in Web Development (HTML, CSS, PHP).</li>
+            <li>Gained core understanding of programming logic and algorithms.</li>
+            <li>Proficient in Microsoft Office Suite (Word, Excel, PowerPoint).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Work Experience</h2>
+
+  <div class="edu-timeline">
+    <div class="edu-item reveal">
+      <div class="edu-dot">💼</div>
+      <div class="edu-body">
+        <div class="edu-period">Aug 2025 – Present</div>
+        <div class="edu-school">PT Cicor Panatec – Batam</div>
+        <div class="edu-role">IT Programmer & Support</div>
+        <div class="edu-desc">
+          <ul class="bullet-list">
+            <li>Develop and maintain web applications to enhance workflow efficiency across various office departments.</li>
+            <li>Built and implemented internal systems: Engineering Change Request (ECR), Document Control, and Booking Systems.</li>
+            <li>Provide technical IT support and troubleshooting for hardware and software issues to ensure minimal downtime.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="edu-item reveal" style="transition-delay: 0.1s;">
+      <div class="edu-dot">🏭</div>
+      <div class="edu-body">
+        <div class="edu-period">Aug 2024 – Feb 2025</div>
+        <div class="edu-school">PT Royce Enterprise Supreme – Batam</div>
+        <div class="edu-role">Production Operator</div>
+        <div class="edu-desc">
+          <ul class="bullet-list">
+            <li>Operated and maintained production machinery while adhering to strict safety protocols.</li>
+            <li>Ensured high-quality output by conducting regular quality control checks on finished products.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="edu-item reveal" style="transition-delay: 0.2s;">
+      <div class="edu-dot">🧑‍💻</div>
+      <div class="edu-body">
+        <div class="edu-period">Mar 2021 – Jun 2021</div>
+        <div class="edu-school">KBMDG Studio (Internship)</div>
+        <div class="edu-role">Project Team Lead</div>
+        <div class="edu-desc">
+          <ul class="bullet-list">
+            <li>Led a development team in creating an innovative and educational learning application.</li>
+            <li>Managed the design and implementation of digital assessment tools and exam materials using Google Forms to streamline student evaluations.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -187,20 +388,18 @@
       <div class="skill-card-title">⚡ Front-End Development</div>
       <div class="skill-tags">
         <span class="skill-tag">Blade</span>
-        <span class="skill-tag">Livewire v3</span>
         <span class="skill-tag">Tailwind CSS</span>
-        <span class="skill-tag">Alpine.js</span>
-        <span class="skill-tag">Chart.js</span>
-        <span class="skill-tag">Leaflet.js</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
       </div>
     </div>
     <div class="skill-card reveal" style="transition-delay: 0.1s;">
       <div class="skill-card-title">🔧 Back-End Development</div>
       <div class="skill-tags">
-        <span class="skill-tag">Laravel 12</span>
-        <span class="skill-tag">Jetstream</span>
-        <span class="skill-tag">Routing</span>
-        <span class="skill-tag">Middleware</span>
+        <span class="skill-tag">Laravel</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">Visual Basic</span>
         <span class="skill-tag">REST API</span>
       </div>
     </div>
@@ -209,6 +408,7 @@
       <div class="skill-tags">
         <span class="skill-tag">MySQL</span>
         <span class="skill-tag">phpMyAdmin</span>
+        <span class="skill-tag">SQL Server</span>
       </div>
     </div>
     <div class="skill-card reveal" style="transition-delay: 0.3s;">
@@ -217,6 +417,34 @@
         <span class="skill-tag">Sensor Integration</span>
         <span class="skill-tag">IoT Devices</span>
         <span class="skill-tag">Hardware Prototyping</span>
+        <span class="skill-tag">C</span>
+      </div>
+    </div>
+    <div class="skill-card reveal" style="transition-delay: 0.4s;">
+      <div class="skill-card-title">🧱 .NET & Web</div>
+      <div class="skill-tags">
+        <span class="skill-tag">VB.NET</span>
+        <span class="skill-tag">ASP.NET (ASPX)</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">PHP</span>
+      </div>
+    </div>
+    <div class="skill-card reveal" style="transition-delay: 0.5s;">
+      <div class="skill-card-title">🧰 Tools & Workflow</div>
+      <div class="skill-tags">
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Microsoft Office</span>
+      </div>
+    </div>
+    <div class="skill-card reveal" style="transition-delay: 0.6s;">
+      <div class="skill-card-title">🤝 Soft Skills</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Leadership</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Project Management</span>
+        <span class="skill-tag">Technical Support</span>
       </div>
     </div>
   </div>
@@ -229,43 +457,157 @@
   <div class="section-label">Projects</div>
   <h2 class="section-title">Work I've Done</h2>
 
-  <div class="projects-grid">
-    <div class="project-card reveal">
-      <div class="project-year">2023</div>
-      <div class="project-title">E-Commerce Platform (Back-End)</div>
-      <div class="project-desc">
-        Built and architected the server-side of an e-commerce application during my time 
-        at Politeknik Negeri Batam. Focused on clean API design, routing, and database management.
+  <div class="slider" data-slider="projects">
+    <button class="slider-btn slider-btn--prev" type="button" aria-label="Previous slide">‹</button>
+    <div class="slider-viewport">
+      <div class="slider-track">
+        <div class="projects-slide">
+          <div class="projects-grid">
+            <div class="project-card reveal">
+              <div class="project-year">2025</div>
+              <div class="project-media">
+                <img src="ECR/image.png" alt="ECR Portal Dashboard" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Engineering Change Request (ECR) Portal</div>
+              <div class="project-desc">
+                A web application to manage the Engineering Change Request process in a structured way: create ECR, track status, approval/sign, and print ECR documents.
+              </div>
+              <span class="project-role">🧩 Web Application</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.1s;">
+              <div class="project-year">Auth</div>
+              <div class="project-media project-media--contain">
+                <img src="ECR/loginECR.jpeg" alt="ECR System Login" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Login & Role Access</div>
+              <div class="project-desc">
+                Sign-in page to access the ECR dashboard, with access settings according to the user's role.
+              </div>
+              <span class="project-role">🔐 Authentication</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.2s;">
+              <div class="project-year">ECR</div>
+              <div class="project-media">
+                <img src="ECR/detailECR.jpeg" alt="Detail Engineering Change Request" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Detail ECR & Lampiran</div>
+              <div class="project-desc">
+                Detail page to view ECR information (affected document, reason, impact assessment), signatory status, and supporting documents.
+              </div>
+              <span class="project-role">📄 Detail & Tracking</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.3s;">
+              <div class="project-year">Form</div>
+              <div class="project-media">
+                <img src="ECR/newECR.jpeg" alt="Engineering Change Request Form" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Create / Edit ECR Form</div>
+              <div class="project-desc">
+                ECR input form to ensure that change data is complete and the review/approval process runs quickly.
+              </div>
+              <span class="project-role">📝 CRUD</span>
+            </div>
+          </div>
+        </div>
+        <div class="projects-slide">
+          <div class="projects-grid">
+            <div class="project-card reveal">
+              <div class="project-year">2025</div>
+              <div class="project-media">
+                <img src="CIDEO/catalogCIDEO.png" alt="CIDEO Dashboard" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">CIDEO</div>
+              <div class="project-desc">
+                CIDEO is a web-based digital video gallery platform specifically designed for corporate/institutional environments. This application functions as a secure documentation center for storing, managing, and distributing company event videos, educational materials, as well as internal training sessions to all employees.
+              </div>
+              <span class="project-role">🧩 Internal System</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.1s;">
+              <div class="project-year">Auth</div>
+              <div class="project-media project-media--contain">
+                <img src="CIDEO/loginCIDEO.jpeg" alt="Login CIDEO" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Login & Role Access</div>
+              <div class="project-desc">
+                User authentication to log into the CIDEO system and access restrictions based on roles.
+              </div>
+              <span class="project-role">🔐 Authentication</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.2s;">
+              <div class="project-year">Admin</div>
+              <div class="project-media">
+                <img src="CIDEO/adminCIDEO.png" alt="CIDEO Admin" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Data Management</div>
+              <div class="project-desc">
+                Admin features to manage master data and content, including create/edit/delete for operational needs.
+              </div>
+              <span class="project-role">🛠️ Admin Panel</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.3s;">
+              <div class="project-year">Detail</div>
+              <div class="project-media">
+                <img src="CIDEO/detailCIDEO.png" alt="CIDEO Details" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Detail & Tracking</div>
+              <div class="project-desc">
+                Detail view to see complete information and make verification checks easier.
+              </div>
+              <span class="project-role">📄 Detail View</span>
+            </div>
+          </div>
+        </div>
+        <div class="projects-slide">
+          <div class="projects-grid">
+            <div class="project-card reveal">
+              <div class="project-year">2025</div>
+              <div class="project-media">
+                <img src="BookingRoom/catalog.png" alt="Room Booking Dashboard" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Booking Room</div>
+              <div class="project-desc">
+                ROOMBOOKING is a web application designed to manage the borrowing and scheduling of meeting rooms within a company environment.
+              </div>
+              <span class="project-role">🧩 Web Application</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.1s;">
+              <div class="project-year">Auth</div>
+              <div class="project-media project-media--contain">
+                <img src="BookingRoom/login.jpeg" alt="Booking Room Login" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Login & User Access</div>
+              <div class="project-desc">
+                Login page to access the room booking system, with user access control.
+              </div>
+              <span class="project-role">🔐 Authentication</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.2s;">
+              <div class="project-year">Detail</div>
+              <div class="project-media">
+                <img src="BookingRoom/detail.png" alt="Booking Room Details" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Detail Booking</div>
+              <div class="project-desc">
+                Booking details page to view room information, usage time, and reservation status.
+              </div>
+              <span class="project-role">📄 Detail View</span>
+            </div>
+            <div class="project-card reveal" style="transition-delay: 0.3s;">
+              <div class="project-year">Form</div>
+              <div class="project-media">
+                <img src="BookingRoom/form.png" alt="Booking Room Form" loading="lazy" onerror="this.closest('.project-media').style.display='none';">
+              </div>
+              <div class="project-title">Request Booking Form</div>
+              <div class="project-desc">
+                Booking request form to select the room, date, time, and meeting requirements.
+              </div>
+              <span class="project-role">📝 Form</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <span class="project-role">⚙️ Back-End Engineer</span>
     </div>
-    <div class="project-card reveal" style="transition-delay: 0.1s;">
-      <div class="project-year">2023 – 2024</div>
-      <div class="project-title">E-Commerce Platform (Front-End)</div>
-      <div class="project-desc">
-        Developed responsive, interactive front-end interfaces for e-commerce. 
-        Leveraged Livewire, Alpine.js, and Tailwind CSS to deliver a seamless user experience.
-      </div>
-      <span class="project-role">🎨 Front-End Engineer</span>
-    </div>
-    <div class="project-card reveal" style="transition-delay: 0.2s;">
-      <div class="project-year">2024 – 2025</div>
-      <div class="project-title">IoT Integrated Web System</div>
-      <div class="project-desc">
-        Full-stack development of an IoT-connected web application — bridging hardware sensors 
-        with a real-time data dashboard. Handled both back-end and front-end engineering.
-      </div>
-      <span class="project-role">🔗 Back/Front-End + IoT</span>
-    </div>
-    <div class="project-card reveal" style="transition-delay: 0.3s;">
-      <div class="project-year">2025</div>
-      <div class="project-title">IoT Device Engineering</div>
-      <div class="project-desc">
-        Hands-on IoT device development — designing circuits, integrating various sensors, 
-        and building embedded systems for real-world applications.
-      </div>
-      <span class="project-role">📡 IoT Engineer</span>
-    </div>
+    <button class="slider-btn slider-btn--next" type="button" aria-label="Next slide">›</button>
   </div>
 </section>
 
@@ -292,6 +634,9 @@
       </a>
       <a href="https://github.com/yubee14" target="_blank" class="contact-link">
         <span class="contact-link-icon">🐙</span> github.com/yubee14
+      </a>
+      <a href="https://instagram.com/yubee14" target="_blank" class="contact-link">
+        <span class="contact-link-icon">📷</span> @yubee14
       </a>
     </div>
 
@@ -350,6 +695,34 @@
       a.style.color = a.getAttribute('href') === '#' + current
         ? 'var(--gold)' : '';
     });
+  });
+
+  const sliders = document.querySelectorAll('[data-slider]');
+  sliders.forEach((slider) => {
+    const viewport = slider.querySelector('.slider-viewport');
+    const prevBtn = slider.querySelector('.slider-btn--prev');
+    const nextBtn = slider.querySelector('.slider-btn--next');
+    const slides = slider.querySelectorAll('.projects-slide');
+
+    if (!viewport || !prevBtn || !nextBtn || slides.length === 0) return;
+
+    const updateButtons = () => {
+      const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      const left = viewport.scrollLeft;
+      prevBtn.disabled = left <= 2;
+      nextBtn.disabled = left >= max - 2;
+      const hasMultiple = slides.length > 1;
+      prevBtn.style.display = hasMultiple ? '' : 'none';
+      nextBtn.style.display = hasMultiple ? '' : 'none';
+    };
+
+    const page = () => Math.max(280, viewport.clientWidth);
+    prevBtn.addEventListener('click', () => viewport.scrollBy({ left: -page(), behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => viewport.scrollBy({ left: page(), behavior: 'smooth' }));
+
+    viewport.addEventListener('scroll', updateButtons, { passive: true });
+    window.addEventListener('resize', updateButtons);
+    updateButtons();
   });
 </script>
 </body>
